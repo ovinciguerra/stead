@@ -1,0 +1,405 @@
+/* Page publique de Stead : accueil et confidentialité, en français et en anglais.
+   Mêmes couleurs et polices que l'application ; clair ou sombre selon le système. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('fonts/inter.woff2') format('woff2-variations');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('fonts/montserrat-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('fonts/montserrat-700.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #f2f5fa;
+  --surface: #ffffff;
+  --surface-2: #ecf0f7;
+  --fg: #0b1422;
+  --fg-2: #4a5970;
+  --fg-3: #8390a6;
+  --line: #dce3ee;
+  --accent: #2f6bff;
+  --accent-soft: #e6eeff;
+  --accent-line: #a9c1ff;
+  --ok: #138a52;
+  --hero: radial-gradient(1200px 520px at 50% -180px, #dfe8ff 0%, rgba(223, 232, 255, 0) 70%);
+  --shadow: 0 1px 2px rgba(11, 20, 34, 0.04), 0 8px 24px rgba(11, 20, 34, 0.06);
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Montserrat', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070b12;
+    --surface: #0c131d;
+    --surface-2: #111a27;
+    --fg: #e6eaf1;
+    --fg-2: #98a6bc;
+    --fg-3: #647389;
+    --line: #1b2636;
+    --accent: #6b9dff;
+    --accent-soft: #13244a;
+    --accent-line: #2b4b8f;
+    --ok: #3ccf8e;
+    --hero: radial-gradient(1200px 520px at 50% -180px, #10264f 0%, rgba(16, 38, 79, 0) 70%);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg) var(--hero) no-repeat;
+  color: var(--fg);
+  font: 16px/1.6 var(--font-ui);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.wrap {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+.wrap.narrow {
+  max-width: 760px;
+}
+
+/* En-tête */
+.top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-block: 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg);
+  text-decoration: none;
+  font: 700 20px/1 var(--font-display);
+  letter-spacing: -0.01em;
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
+.top nav {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.top nav a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--fg-2);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.top nav a:hover,
+.top nav a[aria-current='page'] {
+  background: var(--surface);
+  color: var(--fg);
+  box-shadow: var(--shadow);
+}
+
+/* Accueil */
+.hero {
+  padding-block: 56px 40px;
+  text-align: center;
+}
+.hero img {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  box-shadow: 0 18px 48px rgba(47, 107, 255, 0.28);
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+.pill::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.hero h1 {
+  margin: 18px auto 0;
+  max-width: 14em;
+  font-size: clamp(32px, 6vw, 48px);
+}
+.lead {
+  margin: 18px auto 0;
+  max-width: 36em;
+  color: var(--fg-2);
+  font-size: 18px;
+}
+.meta {
+  margin: 16px 0 0;
+  color: var(--fg-3);
+  font-size: 14px;
+}
+section {
+  padding-block: 28px;
+}
+h2 {
+  margin: 0 0 14px;
+  font-size: 24px;
+}
+h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.card {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.card p {
+  margin: 0;
+  color: var(--fg-2);
+  font-size: 15px;
+}
+.card .ic {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 0 10px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.card .ic svg {
+  width: 18px;
+  height: 18px;
+}
+.points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.points li {
+  position: relative;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.points li::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ok);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.5 4.6a1 1 0 0 1-1.4 0L4.3 8.8a1 1 0 1 1 1.4-1.4l.8.8 3.8-3.9a1 1 0 0 1 1.4 1.4Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.7 5.7-4.5 4.6a1 1 0 0 1-1.4 0L4.3 8.8a1 1 0 1 1 1.4-1.4l.8.8 3.8-3.9a1 1 0 0 1 1.4 1.4Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Tableaux */
+.table {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: var(--surface);
+  font-size: 15px;
+}
+.table th,
+.table td {
+  padding: 11px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.table tr:last-child td {
+  border-bottom: 0;
+}
+.table th {
+  background: var(--surface-2);
+  color: var(--fg-2);
+  font-size: 13px;
+  font-weight: 600;
+}
+.table td:first-child {
+  width: 34%;
+  font-weight: 600;
+}
+.table code {
+  display: block;
+  margin: 3px 0 0;
+  color: var(--fg-3);
+  font: 400 12px/1.4 ui-monospace, Menlo, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+/* Politique de confidentialité */
+.doc {
+  padding-block: 32px 8px;
+}
+.doc h1 {
+  margin: 8px 0 6px;
+  font-size: clamp(28px, 5vw, 38px);
+}
+.doc .updated {
+  margin: 0 0 24px;
+  color: var(--fg-3);
+  font-size: 14px;
+}
+.doc h2 {
+  margin: 36px 0 10px;
+  font-size: 21px;
+}
+.doc p,
+.doc li {
+  color: var(--fg-2);
+}
+.doc strong {
+  color: var(--fg);
+}
+.doc ul {
+  padding-left: 22px;
+}
+.doc li + li {
+  margin-top: 6px;
+}
+.summary {
+  margin: 0 0 8px;
+  padding: 18px 20px 18px 22px;
+  border: 1px solid var(--accent-line);
+  border-radius: 14px;
+  background: var(--accent-soft);
+}
+.summary ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.summary li {
+  color: var(--fg);
+}
+.note {
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--surface);
+  color: var(--fg);
+}
+
+/* Pied de page */
+footer {
+  margin: 40px 0 0;
+  padding: 24px 0 40px;
+  border-top: 1px solid var(--line);
+  color: var(--fg-3);
+  font-size: 14px;
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: space-between;
+}
+footer a {
+  color: var(--fg-2);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero {
+    padding-block-start: 36px;
+  }
+  .table td:first-child {
+    width: 40%;
+  }
+}
+@media (max-width: 480px) {
+  .top {
+    gap: 10px;
+  }
+  .top nav a {
+    padding: 6px 10px;
+  }
+  .top nav a.home {
+    display: none;
+  }
+}
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .top nav,
+  footer {
+    display: none;
+  }
+}
