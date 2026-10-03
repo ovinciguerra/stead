@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — Stead</title>
+<meta name="description" content="Comment Stead traite tes données : tout reste sur ton PC, rien n’est vendu, et chaque accès se retire en un clic.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/stead.png">
+<link rel="alternate" hreflang="en" href="privacy.html">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="wrap narrow top">
+  <a class="brand" href="./"><img src="assets/stead.png" alt="" width="36" height="36">Stead</a>
+  <nav aria-label="Navigation">
+    <a class="home" href="./">Accueil</a>
+    <a href="confidentialite.html" aria-current="page">Confidentialité</a>
+    <a href="privacy.html" hreflang="en" lang="en">English</a>
+  </nav>
+</header>
+
+<main class="wrap narrow doc">
+  <h1>Politique de confidentialité</h1>
+  <p class="updated">Dernière mise à jour : 3 octobre 2026</p>
+
+  <div class="summary">
+    <ul>
+      <li>Stead tourne sur ton ordinateur. Il n’y a ni serveur Stead ni compte Stead : tes mails, ton agenda, tes fichiers et tes conversations restent chez toi.</li>
+      <li>Quand tu lui demandes quelque chose, Stead envoie au modèle d’IA que tu as choisi seulement ce qu’il faut pour te répondre.</li>
+      <li>Tes données ne sont ni vendues, ni utilisées pour de la publicité, ni pour entraîner des modèles d’IA.</li>
+      <li>Tu retires chaque accès en un clic, et tu peux tout effacer.</li>
+    </ul>
+  </div>
+
+  <h2>Qui est responsable</h2>
+  <p>Stead est un assistant personnel développé par <strong>Olivier Vinciguerra</strong>, actuellement en version de test privée. Pour toute question : <a href="mailto:o1vinciguerra@gmail.com">o1vinciguerra@gmail.com</a>.</p>
+  <p>Le développeur de Stead n’a <strong>aucun accès</strong> à tes mails, à ton agenda, à tes fichiers ni à tes conversations : ils restent sur ton ordinateur.</p>
+
+  <h2>Où sont tes données</h2>
+  <ul>
+    <li><strong>Sur ton ordinateur.</strong> Conversations, mémoire, règles, journal d’activité et réglages sont rangés dans le dossier de données de Stead, sur ton PC.</li>
+    <li><strong>Secrets chiffrés par ton système.</strong> Les clés et les jetons d’accès (Google, Microsoft, modèles d’IA) sont chiffrés par Windows (DPAPI) ou macOS (Trousseau). Ils ne sont jamais montrés à un modèle d’IA ni inclus dans une exportation.</li>
+    <li><strong>Sur ton téléphone,</strong> si tu y installes l’appli : elle se relie directement à ton PC, par ton Wi-Fi ou par ton réseau privé Tailscale. Elle n’enregistre que ce qu’il faut pour afficher tes échanges.</li>
+  </ul>
+
+  <h2>Données Google</h2>
+  <p>Quand tu relies un compte Google, Stead demande les accès suivants, et ne s’en sert que pour ceci :</p>
+  <table class="table">
+    <thead><tr><th scope="col">Accès</th><th scope="col">Ce que Stead en fait</th></tr></thead>
+    <tbody>
+      <tr><td>Lire tes e-mails<code>gmail.readonly</code></td><td>Chercher, lire et résumer tes mails ; repérer ceux qui attendent une réponse. À ta demande ou dans une routine que tu as créée.</td></tr>
+      <tr><td>Préparer et envoyer des e-mails<code>gmail.compose</code></td><td>Créer des brouillons dans ton Gmail. Un mail n’est envoyé qu’après ta validation explicite, avec quelques secondes pour annuler.</td></tr>
+      <tr><td>Gérer tes événements<code>calendar.events</code></td><td>Lire tes rendez-vous ; créer ou supprimer un événement après ta validation.</td></tr>
+      <tr><td>Voir la liste de tes agendas<code>calendar.<wbr>calendarlist.<wbr>readonly</code></td><td>Savoir quels agendas consulter.</td></tr>
+    </tbody>
+  </table>
+  <p class="note">L’utilisation et le transfert à toute autre application des informations reçues des API Google par Stead respectent le <a href="https://developers.google.com/terms/api-services-user-data-policy">Règlement sur les données utilisateur des services d’API Google</a> (Google API Services User Data Policy), y compris les exigences d’utilisation limitée (Limited Use).</p>
+  <ul>
+    <li>Tes données Google servent uniquement aux fonctions de Stead que tu utilises.</li>
+    <li>Elles ne sont jamais vendues, jamais utilisées pour de la publicité ou du profilage, et jamais utilisées pour développer, améliorer ou entraîner des modèles d’IA.</li>
+    <li>Personne ne les lit : elles ne quittent ton ordinateur que vers le modèle d’IA que tu as choisi, au moment où tu lui demandes quelque chose (voir ci-dessous).</li>
+  </ul>
+  <p>Les mêmes règles valent pour un compte Microsoft (Outlook, Calendrier).</p>
+
+  <h2>Modèles d’IA</h2>
+  <p>Pour comprendre ta demande et préparer une réponse, Stead s’appuie sur le modèle d’IA que tu as choisi : par OpenRouter, avec ton abonnement ChatGPT, ou avec une clé que tu as ajoutée. Il lui envoie ta demande et seulement les éléments utiles (par exemple, le mail auquel tu veux répondre). Le fournisseur du modèle traite ces éléments pour produire la réponse, selon ses propres conditions.</p>
+  <ul>
+    <li>Par défaut, seuls les modèles d’Anthropic, d’OpenAI, de Mistral et les modèles locaux reçoivent des données personnelles, y compris via OpenRouter ; jamais les modèles gratuits. Tu peux restreindre ce réglage dans Stead.</li>
+    <li>Les clés et jetons d’accès ne sont jamais envoyés à un modèle.</li>
+    <li>Le contenu d’un mail, d’une page web ou d’un fichier est traité comme une information, jamais comme un ordre : une consigne cachée qui s’adresse à une IA est signalée et n’est pas suivie.</li>
+  </ul>
+
+  <h2>Version de test</h2>
+  <p>Si tu utilises le paquet de test fourni par le développeur, les requêtes passent par un compte OpenRouter qu’il paie. Ce compte n’enregistre pas le contenu des requêtes. Pour suivre la consommation, le développeur voit seulement, pour chaque testeur, un identifiant (ton prénom et quatre caractères), la fonction utilisée et le coût. Jamais le contenu.</p>
+
+  <h2>Voix, web et téléphone</h2>
+  <ul>
+    <li><strong>Voix.</strong> Par défaut, la dictée et les voix de Stead fonctionnent sur ton appareil : ta voix n’est envoyée nulle part. Si tu choisis une dictée ou une voix en ligne (OpenAI, Mistral, ElevenLabs), l’enregistrement ou le texte à lire est envoyé à ce fournisseur pour être traité.</li>
+    <li><strong>Web.</strong> Stead n’agit dans ton Chrome que pour une tâche que tu lui as confiée. Les sites sensibles (banque, santé…) sont bloqués par défaut, et un formulaire ne part qu’après ta validation de ses champs exacts.</li>
+    <li><strong>Notifications sur le téléphone.</strong> Elles sont chiffrées de bout en bout : le service de notifications du téléphone ne voit qu’un message chiffré.</li>
+  </ul>
+
+  <h2>Durée de conservation et suppression</h2>
+  <ul>
+    <li>Tes données restent sur ton ordinateur tant que tu les gardes. « Tout effacer », dans les réglages de Stead, les supprime.</li>
+    <li>Déconnecter un compte dans Stead efface ses jetons de ton ordinateur et, pour Google, révoque aussi l’accès. Tu peux retirer l’accès à tout moment depuis ton compte : <a href="https://myaccount.google.com/permissions">Google</a> ou <a href="https://account.live.com/consent/Manage">Microsoft</a>.</li>
+    <li>Chaque action de Stead est notée dans Activité, que tu peux consulter à tout moment.</li>
+  </ul>
+
+  <h2>Sécurité</h2>
+  <p>Stead propose, et un moteur de règles décide : les gestes sensibles (envoyer un mail, supprimer un fichier, valider un formulaire) passent toujours par ta validation. Les secrets sont chiffrés par ton système et ne sortent jamais du cœur de l’application.</p>
+
+  <h2>Enfants</h2>
+  <p>Stead s’adresse aux adultes et n’est pas destiné aux enfants.</p>
+
+  <h2>Changements</h2>
+  <p>Si cette politique change, la date en haut de la page est mise à jour ; un changement important est signalé dans Stead.</p>
+
+  <h2>Contact</h2>
+  <p>Olivier Vinciguerra — <a href="mailto:o1vinciguerra@gmail.com">o1vinciguerra@gmail.com</a></p>
+</main>
+
+<footer>
+  <div class="wrap narrow">
+    <span>Stead · <a href="./">Accueil</a></span>
+    <span><a href="privacy.html" hreflang="en" lang="en">English version</a></span>
+  </div>
+</footer>
+</body>
+</html>
